@@ -1,7 +1,7 @@
 import random
 import time
 import calendar
-
+import os
 
 #time 时间模块
 '''
@@ -46,19 +46,17 @@ ask_ok("qinss:")
 
 while True:
     i = time.time()
-    m = (1603642512.0)
+    m = (1604999999.0)
     while True:      
         time.sleep(1)
         d = (m-i)
         h = d/60/60
         f = d/60
         s = d%60
-        print("距离生日还有%d:%d:%d"%(h,f,m))
-
-
+        print("距离你还有%d:%d:%d"%(h,f,m))
         break
     if i >= m:
-        print("生日快乐")
+        print("你好")
         break
 
     
