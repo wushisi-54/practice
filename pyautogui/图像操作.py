@@ -1,11 +1,11 @@
 import pyautogui
 
-pyautogui.screenshot(r'C:\Users\ZDH\Desktop\PY\my_screenshot.png')  # 截全屏并设置保存图片的位置和名称
-im = pyautogui.screenshot(r'C:\Users\ZDH\Desktop\PY\my_screenshot.png')  # 截全屏并设置保存图片的位置和名称
+pyautogui.screenshot(r'.\\')  # 截全屏并设置保存图片的位置和名称
+im = pyautogui.screenshot(r'.\\')  # 截全屏并设置保存图片的位置和名称
 print(im)  # 打印图片的属性
 
 # 不截全屏，截取区域图片。截取区域region参数为：左上角XY坐标值、宽度和高度
-pyautogui.screenshot(r'C:\Users\ZDH\Desktop\PY\region_screenshot.png', region=(0, 0, 300, 400))
+pyautogui.screenshot(r'.\\', region=(0, 0, 300, 400))
 
 pix = pyautogui.screenshot().getpixel((220, 200))  # 获取坐标(220,200)所在屏幕点的RGB颜色
 positionStr = ' RGB:(' + str(pix[0]).rjust(3) + ',' + str(pix[1]).rjust(3) + ',' + str(pix[2]).rjust(3) + ')'
@@ -22,17 +22,17 @@ pyautogui.pixelMatchesColor(100, 200, (255, 255, 245), tolerance=10)
 
 # 获得文件图片在现在的屏幕上面的坐标，返回的是一个元组(top, left, width, height)
 # 如果截图没找到，pyautogui.locateOnScreen()函数返回None
-a = pyautogui.locateOnScreen(r'C:\Users\ZDH\Desktop\PY\region_screenshot.png')
+a = pyautogui.locateOnScreen(r'.\\')
 print(a)  # 打印结果为Box(left=0, top=0, width=300, height=400)
 x, y = pyautogui.center(a)  # 获得文件图片在现在的屏幕上面的中心坐标
 print(x, y)  # 打印结果为150 200
-x, y = pyautogui.locateCenterOnScreen(r'C:\Users\ZDH\Desktop\PY\region_screenshot.png')  # 这步与上面的四行代码作用一样
+x, y = pyautogui.locateCenterOnScreen(r'.\\')  # 这步与上面的四行代码作用一样
 print(x, y)  # 打印结果为150 200
 
 # 匹配屏幕所有与目标图片的对象，可以用for循环和list()输出
-pyautogui.locateAllOnScreen(r'C:\Users\ZDH\Desktop\PY\region_screenshot.png')
-for pos in pyautogui.locateAllOnScreen(r'C:\Users\ZDH\Desktop\PY\region_screenshot.png'):
+pyautogui.locateAllOnScreen(r'.\\')
+for pos in pyautogui.locateAllOnScreen(r'.\\'):
     print(pos)
 # 打印结果为Box(left=0, top=0, width=300, height=400)
-a = list(pyautogui.locateAllOnScreen(r'C:\Users\ZDH\Desktop\PY\region_screenshot.png'))
+a = list(pyautogui.locateAllOnScreen(r'.\\'))
 print(a)  # 打印结果为[Box(left=0, top=0, width=300, height=400)]
