@@ -46,16 +46,16 @@ ask_ok("qinss:")
 
 while True:
     i = time.time()
-    m = (1604999999.0)
+    b = (1604999999.0)
     while True:      
         time.sleep(1)
-        d = (m-i)
+        d = (b-i)
         h = d/60/60
         f = d/60
         s = d%60
-        print("距离你还有%d:%d:%d"%(h,f,m))
+        print("距离你还有%d:%d:%d"%(h,f,s))
         break
-    if i >= m:
+    if i >= b:
         print("你好")
         break
 
