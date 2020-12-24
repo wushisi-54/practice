@@ -8,10 +8,9 @@ time.sleep(1)
 
 region=(0,20,1134,672)#窗口位置调整
 c = (27,34)#窗口判断
-j = (1070,626)#卷轴 关 = 50  开 = 205
-z = (325,620)#组队 存在 = 156   不存在 = 58
+j = (1070,626)#卷轴 
+z = (325,620)#组队 
 p = (690,580)#匹配
-g = (713,73)#匹配等待 勾玉位置 匹 =  110<color<120
 b = (1024,500) # 准备 = 243
 w = (390,150) #完 = 65   败 = 70
 w2 = (600,510)    #92
@@ -27,21 +26,13 @@ a = 0
 while a <= 40:
     while True:
         color1 = sezi(region,z)
-        #print(color1)
-        if color1 == 58 or color1 == 156:
+        print(color1)
+        if color1 == 61:
             break
-    if color1 == 58:
-        pyautogui.click(j)
-        time.sleep(0.25)
-        pyautogui.click(z)
-        time.sleep(0.25)
-        pyautogui.click(p)
-    elif color1 == 156:
+    if color1 == 61:
         pyautogui.click(z)
         time.sleep(0.75)
         pyautogui.click(p)
-    else:
-        pass
     print("匹配中，请稍等")
 
     while True:
@@ -70,7 +61,7 @@ while a <= 40:
             if color4 == 60:
                 break
         if color4 == 60:
-            time.sleep(3)
+            time.sleep(5)
             pyautogui.click(w2)
     elif color3 == 70:
         pyautogui.click(w)
