@@ -8,7 +8,8 @@ time.sleep(1)
 
 region=(0,20,1134,672)#窗口位置调整
 c = (27,34)#窗口判断
-j = (1070,626)#卷轴 
+j = (1070,626)#卷轴 33
+
 z = (325,620)#组队 
 p = (690,580)#匹配
 b = (1024,500) # 准备 = 243
@@ -20,18 +21,19 @@ a = 0
 #窗口移到固定位置
 # autopy.mouse.move(395,200)
 # pyautogui.dragTo(0, 20, 1, button='left')
-# currentMouseX, currentMouseY = pyautogui.position()  # 鼠标当前位置
-# print(currentMouseX, currentMouseY)
+# # currentMouseX, currentMouseY = pyautogui.position()  # 鼠标当前位置
+# # print(currentMouseX, currentMouseY)
 
 while a <= 40:
     while True:
         color1 = sezi(region,z)
         print(color1)
-        if color1 == 61:
+        if color1 == 54:
             break
-    if color1 == 61:
+    if color1 == 54:
+        time.sleep(2)
         pyautogui.click(z)
-        time.sleep(0.75)
+        time.sleep(1)
         pyautogui.click(p)
     print("匹配中，请稍等")
 
@@ -56,7 +58,7 @@ while a <= 40:
         pyautogui.click(w)
         while True:
             color4 = sezi(region,w2)
-            #print(color4)
+            print(color4)
             print("等待结算")
             if color4 == 60:
                 break
@@ -66,12 +68,13 @@ while a <= 40:
     elif color3 == 70:
         pyautogui.click(w)
     a += 1
+    time.sleep(3)
 
 
 
     
 # while True:
-#     color3 = sezi(region,w)
+#     color3 = sezi(region,w2)
 #     print(color3)
 #     if color3 == 60:
 #         break

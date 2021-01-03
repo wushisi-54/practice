@@ -1,7 +1,7 @@
 import pyautogui
 from PIL import Image
 
-region=(0,20,1134,672)
+region=(0,1,1134,653)
 a = (1070,626)
 def sezi(region,j):
         im = pyautogui.screenshot(region=region)
