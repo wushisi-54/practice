@@ -48,9 +48,10 @@ def save_mp3(data,name):
 
 def main():
     # 输入网易云的id号
-    id = '324127275'
+    id = '5481243518'
     url = 'https://music.163.com/playlist?id='+id
     data = parse_url(url)
     getlist(data)
 
 main()
+#https://music.163.com/#/playlist?id=5481243518&userid=324127275
