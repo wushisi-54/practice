@@ -19,8 +19,8 @@ a = 0
 
 
 #窗口移到固定位置
-# autopy.mouse.move(395,200)
-# pyautogui.dragTo(0, 20, 1, button='left')
+autopy.mouse.move(395,200)
+pyautogui.dragTo(0, 20, 1, button='left')
 # # currentMouseX, currentMouseY = pyautogui.position()  # 鼠标当前位置
 # # print(currentMouseX, currentMouseY)
 

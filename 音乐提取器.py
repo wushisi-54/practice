@@ -10,7 +10,7 @@ html = requests.get(url,headers = headers,allow_redirects=False)#发送请求后
 html.encoding = 'utf-8' #源码解析
 
 
-
+print(html)
 
 
 
