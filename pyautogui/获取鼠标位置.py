@@ -12,7 +12,7 @@ def get_mouse_positon():
         for i in range(10):
             # Get and print the mouse coordinates.
             x, y = pyautogui.position()
-            positionStr = '鼠标坐标点（X,Y）为：{},{}'.format(str(x).rjust(4), str(y).rjust(4))
+            positionStr = '鼠标坐标点(X,Y)为:{},{}'.format(str(x).rjust(4), str(y).rjust(4))
             pix = pyautogui.screenshot().getpixel((x, y))  # 获取鼠标所在屏幕点的RGB颜色
             positionStr += ' RGB:(' + str(pix[0]).rjust(3) + ',' + str(pix[1]).rjust(3) + ',' + str(pix[2]).rjust(
                 3) + ')'
