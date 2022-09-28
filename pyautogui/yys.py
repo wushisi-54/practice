@@ -1,6 +1,4 @@
-from audioop import avg
 import random
-from re import T
 import win32api
 import time
 import win32con
@@ -21,10 +19,8 @@ def Mouse_behavior(x,y,t=0):#鼠标左键点击的函数 x,y:坐标 t:时间
         time.sleep(t)
     return 0 
 
-
 def resoluttion():# 获取屏幕像素分辨率
     return win32api.GetSystemMetrics(0),win32api.GetSystemMetrics(1)
-
 
 def get_window_info():#获取游戏的窗口坐标
     wdname = u'阴阳师-网易游戏'
@@ -34,16 +30,15 @@ def get_window_info():#获取游戏的窗口坐标
     else:
         return win32gui.GetWindowRect(handle)
 
-
 def get_posx(x,window_size): #返回x相对坐标
     return (window_size[2] - window_size[0]) * x / 870
-
 
 def get_posy(y,window_size):#返回y相对坐标
     return (window_size[3] - window_size[1]) * y / 520
 
 def guaji():
     i = 0
+    t = 0
     while True:
         i += 1
         print(i)
@@ -56,7 +51,7 @@ def guaji():
             avg = int(sum(list(img_zd.getdata())) / 256)
 
             if avg == zd:
-                time.sleep(1)
+                time.sleep(2)
                 Mouse_behavior(zd_mx,zd_my,t=0)
                 print("战斗开始")
                 break
@@ -73,14 +68,15 @@ def guaji():
             img_jl = img_jl.convert('L')
             avg = int(sum(list(img_jl.getdata())) / 256)
 
-            if 205 < avg < 220:
+            if 207 < avg < 220:
                 time.sleep(2)
                 Mouse_behavior(jl_mx, jl_my, t=0)
                 print("奖励出现已点击")
                 break
             else:
-                time.sleep(0.5)
-                print(avg)
+                time.sleep(1)
+                t += 1
+                print(t)
                 print("等待奖励出现")
                 continue
         
@@ -93,7 +89,7 @@ def guaji():
             avg = int(sum(list(img_sl.getdata())) / 256)
 
             if avg == sl:
-                time.sleep(1)
+                time.sleep(2)
                 Mouse_behavior(sl_mx, sl_my, t=0)
                 print("战斗胜利准备退出")
                 break
@@ -108,21 +104,21 @@ def guaji():
 if __name__ == '__main__':
 #    Mouse_behavior(1819,736,0) #鼠标左键行为
 #    print(pyautogui.position())#利用pyautogui获取鼠标坐标
-#    print(resoluttion())#获取屏幕分辨率
-    # print(get_window_info())#获取游戏窗口信息（坐标）
+    print(resoluttion())#获取屏幕分辨率
+    print(get_window_info())#获取游戏窗口信息（坐标）
     # 战斗位置 x780，y430， x820，y450 像素513
     # 打完奖励位置 x200,130, x240,y150 像素216
     # 胜利位置 x290,y150, x330,y170 像素534
     zd = 513
     jl = 216
     sl = 543
-    window_size = (get_window_info())
-    topx, topy = window_size[0], window_size[1]
+    window_size = (get_window_info())#获取游戏窗口位置
+    topx, topy = window_size[0], window_size[1] #定位起点坐标
     
     guaji()
     
-    # img_zd = ImageGrab.grab((topx + get_posx(200, window_size), topy + get_posy(130, window_size),
-    #                         topx + get_posx(240, window_size), topy + get_posy(150, window_size)))
+    # img_zd = ImageGrab.grab((topx + get_posx(200, window_size), topy + get_posy(280, window_size),
+    #                         topx + get_posx(280, window_size), topy + get_posy(360, window_size)))
     # img_zd= img_zd.convert('L')
     # avg = int(sum(list(img_zd.getdata())) / 256)
     # img_zd.show()
