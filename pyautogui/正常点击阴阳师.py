@@ -115,7 +115,7 @@ if __name__ == '__main__':
     window_size = (get_window_info())#获取游戏窗口位置
     topx, topy = window_size[0], window_size[1] #定位起点坐标
     
-    guaji()
+    # guaji()
     
     # img_zd = ImageGrab.grab((topx + get_posx(200, window_size), topy + get_posy(280, window_size),
     #                         topx + get_posx(280, window_size), topy + get_posy(360, window_size)))
